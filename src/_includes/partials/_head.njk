@@ -1,0 +1,13 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="{{ description or metadata.description }}">
+<meta name="author" content="{{ author or metadata.author }}"/>
+<title>{%- if renderData.title %}{{ renderData.title }} | {% elif title %}{{ title }} | {% endif %}{{ metadata.title }}</title>
+
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/img/logos/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/logos/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/img/logos/favicon-16x16.png">
+
+<!-- <link href="https://fonts.googleapis.com/css2?family=Fira+Mono&family=Inter&display=swap" rel="stylesheet"> -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/spncrhrstn/yacck/yacck.min.css">
+<link rel="stylesheet" type="text/css" href="/assets/css/styles.css"/>
