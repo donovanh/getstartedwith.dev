@@ -6,13 +6,8 @@
     <li class="post-list-item">
         <a class="post-list-item-title" href="{{ post.url }}">{{ post.data.title }}</a>
         <p class="post-list-item-exerpt">
-            {{ post.data.post_excerpt }}
-            <i><a href="{{ post.url }}">Read more...</a></i>
+            {{ post.data.description }}
         </p>
-        <div class="post-list-item-meta">
-            <time datetime="{{ post.data.date | dateISO }}">{{ post.data.date | datePretty }}</time>
-            {{ tagsList(post.data.tags) }}
-        </div>
     </li>
     {% endfor %}
 </ul>

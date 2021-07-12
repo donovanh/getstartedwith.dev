@@ -1,6 +1,8 @@
 const pluginRSS = require('@11ty/eleventy-plugin-rss');
+const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const moment = require('moment');
 moment.locale('en');
+const pluginTOC = require('eleventy-plugin-toc')
 
 module.exports = function(eleventyConfig) {
     // allows templates to add additional data
@@ -45,8 +47,23 @@ module.exports = function(eleventyConfig) {
         return collection.getFilteredByGlob('./src/posts/*.md');
     });
 
+    // IDs in headings
+    const markdownIt = require("markdown-it");
+    
+    // create a new markdown-it instance with the plugin
+    const markdownItAnchor = require("markdown-it-anchor");
+    const markdownLib = markdownIt({ html: true }).use(markdownItAnchor);
+
+    // replace the default markdown-it instance
+    eleventyConfig.setLibrary("md", markdownLib);
+
     // add plugins
     eleventyConfig.addPlugin(pluginRSS);
+    eleventyConfig.addPlugin(syntaxHighlight);
+    eleventyConfig.addPlugin(pluginTOC, {
+        tags: ['h2', 'h3'],
+        wrapper: 'div'
+    });
     
     return {
         dir: {

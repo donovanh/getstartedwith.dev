@@ -6,22 +6,21 @@ layout: layouts/_base.njk
 <article class="post">
     <header class="post-header">
         <h1>{{ title }}</h1>
-        <div class="post-meta">
-            <div class="post-meta-dates">
-                Published: <time datetime="{{ date | dateISO }}">{{ date | datePretty }}</time>
-                {% if updated %}
-                <br>Updated: <time datetime="{{ updated | dateISO }}">{{ updated | datePretty }}</time>
-                {% endif %}
-            </div>
-            <div class="post-meta-tags">
-                Tagged: {{ tagsList(tags) }}
-            </div>
-        </div>
+        <p class="lead">{{ lead }}</p>
+        <details>
+            <summary>Table of contents</summary>
+            {{ content | toc | safe }}
+        </details>
     </header>
-    
-    <hr>
     
     <div class="post-content">
         {{ content | safe }}
     </div>
+
+    <div>
+    TODO: Get your certificate of completion!
+    </div>
+
+    <p>Did this get you started on {{ title }}? If you have any ideas or feedback, <a href="mailto:donovan@getstarted.dev">let me know</a>!</p>
+
 </article>

@@ -1,5 +1,216 @@
-:root{
+:root {
     /* Custom variable values here */
+    --highlight-colour: #0094cf;
+    --highlight-colour-light: #efeded;
+    --highlight-colour-hover: #00b7ff;
+    --text-light: #999;
+}
+
+/* Typography */
+/*! Typebase.less v0.1.0 | MIT License */
+/* Setup */
+
+@font-face {
+    font-family: system;
+    font-style: normal;
+    font-weight: 300;
+    src: local(".SFNSText-Light"), local(".HelveticaNeueDeskInterface-Light"), local(".LucidaGrandeUI"), local("Ubuntu Light"), local("Segoe UI Light"), local("Roboto-Light"), local("DroidSans"), local("Tahoma");
+}
+
+html {
+    font-family: "system";
+    font-size: 118%;
+    -webkit-font-smoothing: antialiased;
+}
+
+@media screen and (min-width: 800px) {
+    html {
+        font-size: 137.5%;
+    }
+}
+
+/* Copy & Lists */
+p {
+    line-height: 1.5rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0;
+}
+ul,
+ol {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+ul li,
+ol li {
+    line-height: 1.5rem;
+}
+ul ul,
+ol ul,
+ul ol,
+ol ol {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+blockquote {
+    line-height: 1.5rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+/* Change heading typefaces here */
+    font-family: sans-serif;
+    font-weight: 1800;
+    margin-top: 1.5rem;
+    margin-bottom: 0;
+    line-height: 1.5rem;
+}
+h1 {
+    font-size: 4.242rem;
+    line-height: 4.5rem;
+    margin-top: 3rem;
+}
+h2 {
+    font-size: 2.828rem;
+    line-height: 3rem;
+    margin-top: 3rem;
+}
+h3 {
+    font-size: 1.414rem;
+}
+h4 {
+    font-size: 0.707rem;
+}
+h5 {
+    font-size: 0.4713333333333333rem;
+}
+h6 {
+    font-size: 0.3535rem;
+}
+/* Tables */
+table {
+    margin-top: 1.5rem;
+    border-spacing: 0px;
+    border-collapse: collapse;
+}
+table td,
+table th {
+    padding: 0;
+    line-height: 33px;
+}
+/* Code blocks */
+code {
+    vertical-align: bottom;
+}
+/* Leading paragraph text */
+.lead {
+    font-size: 1.414rem;
+    line-height: 2rem;
+}
+/* Hug the block above you */
+.hug {
+    margin-top: 0;
+}
+
+/* General styles */
+
+body {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 1rem;
+    -webkit-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+}
+
+a {
+    color: var(--highlight-colour);
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.1s linear;
+}
+
+a:hover {
+    color: var(--highlight-colour-hover);
+    text-decoration: underline;
+}
+
+p code {
+    background-color: var(--highlight-colour-light);
+    border-radius: 5px;
+    padding: 0.2rem 0.25rem 0.3rem;
+}
+
+details {
+    margin: 2rem 0 1rem;
+}
+
+details section {
+    border-radius: 10px;
+    background-color: var(--highlight-colour-light);
+    padding: 1rem;
+    margin: 1rem 0;
+}
+
+details section p:first-child {
+    margin-top: 0;
+}
+
+/* Header */
+
+.page-header {
+    margin-top: 3rem;
+}
+
+/* Footer */
+
+footer {
+    margin: 1rem 0;
+}
+
+.mailing-list {
+    border-radius: 5px;
+    font-size: 90%;
+    font-weight: bold;
+}
+
+.mailing-list form {
+    display: flex;
+    align-items: flex-end;
+    padding: 1rem 0;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-size: 90%;
+}
+
+.form-group input {
+    font-size: 118%;
+    margin: 0.25rem 0 0;
+    padding: 0.25rem 0.5rem;
+}
+
+.form-actions input {
+    background: var(--highlight-colour);
+    border: 2px solid var(--highlight-colour);
+    border-radius: 2px;
+    color: #fff;
+    padding: 0.25rem 0.5rem;
+    font-size: 118%;
+    margin: 0 0 0 0.25rem;
+}
+
+/* Post page */
+
+.post-content img {
+    border-radius: 5px;
+    box-shadow: 0 0 0 5px var(--highlight-colour-light);
+    max-width: 100%;
+    margin: 0.5rem 0;
 }
 
 .post-list {
@@ -8,53 +219,66 @@
     margin: 0;
 }
 
-.post-list-item{
+.post-list-item {
     padding: 0;
     margin: 2rem 0;
 }
 
-.post-list-item-title{
+.post-list-item-title {
     font-size: 1.75rem;
 }
 
-.post-list-item-excerpt{
+.post-list-item-excerpt {
 }
 
-.post-list-item-meta{
+.post-list-item-meta {
     font-style: italic;
     color: var(--font-color-med);
 }
 
+/* TOC */
+
+.toc li {
+    color: var(--text-light);
+}
+
+.toc ol ol li {
+    list-style: none;
+}
+
 /* post pages */
-.post{
+
+.post-header h1 {
+    margin-top: 0.5rem;
 }
 
-.post-meta{
-    color: var(--font-color-med);
+.post-meta {
+    background: var(--highlight-colour-light);
+    border-radius: 5px;
+    padding: 1rem;
+    font-weight: bold;
+    margin: 1rem 0 0;
 }
 
-.post-meta-tags{
+.post-meta p {
+    margin: 0.25rem;
 }
 
-.post-meta-tags-tag{
-    margin: 0 2px;
-}
-
-.page-nav{
+.page-nav {
     list-style-type: none;
     margin: .5rem 0;
     padding: 0;
     text-align: center;
 }
 
-.page-nav li{
+.page-nav li { 
     display: inline-block;
     font-size: 1.25rem;
     margin: 0 .25rem;
     padding: 0;
 }
 
-.page-nav li .page-nav-page-num{
+.page-nav li .page-nav-page-num {
     padding: .25rem .5rem;
 }
 

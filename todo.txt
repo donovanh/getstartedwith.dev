@@ -1,11 +1,68 @@
+TODO:
+
+Layout:
+- Post
+- About link at top right - new page or popup?
+- Style various elements in the article
+-- Code blocks
+-- Images
+-- Inline video
+-- CodePen embeds
+
+
+-- Header
+-- Auto generated social media images (use puppet and a static page)
+-- Tags
+-- Date
+-- Collection
+-- "Pre-requisites" details block
+-- Summary
+-- Content
+-- Subscribe callout (part of footer)
+-- Favicons
+-- App manifest
+-- Lazy load images
+-- Some cool CSS tweaks https://gist.github.com/jackdomleo7/55659bafe581d19cc341ef775d6a9e6b
+-- Set up email forwarding
+-- Generate certificate using https://www.npmjs.com/package/jspdf
+-- "Back to top" link
+
+Phase two:
+-- Up Next callout
+-- CSS Gulp pipeline (combine and minify)
+-- Night mode
+-- Prefers reduced motion
+-- Header animated decoration
+-- Organise posts by topic in folder
+-- Sidebar: Collection links, if set
+-- Look into ways of generating ebooks from the posts
+--- Sell them? Or offer a compilation for sale?
+
+- Posts
+- Static page
+- Home page
+- Tags page
+
+-- Per post custom styles / theme
+
+Posts structure:
+
+- Main topic (e.g. React, Svelte, Testing, Automation)
+-- Subtopic (e.g. React > Redux, Testing -> Cypress)
+- Collection
+
+Frontmatter:
+- main_topic
+- sub_topic (optional)
+- collection (optional) (a group of related posts)
+-- collection_order (optional) (ordering for showing collections)
+- up_next (article stub - work out what this would need)
+
+Replace Moment with DateFns (or native?)
+
+(Put together a CSS topic collection)
+
 Topics to write about:
-
-URL ideas
-getstartedwith.dev
-
-- Scheduling Twitter posts
--- With Svelte, Cron, local DB, posting to Twitter on a schedule
--- Auth0 for login
 
 - Generating "live" share images with Github Actions
 - Web components with Svelte
@@ -13,11 +70,29 @@ getstartedwith.dev
 - Getting started with:
 -- GraphQL
 -- MongoDB
--- React and Redux
+-- web3 / Ethereum
+-- React
+-- Redux Toolkit
 -- TypeScript
+-- Svelte (&& SvelteKit)
+-- Astro
+-- SolidJS
+-- Temporal (JS DateTime)
+-- Lighthouse
+-- Desktop Push Notifications
 -- Tailwind CSS
--- Svelte && Sapper
+-- Image-Set
+-- CSS @supports
+-- CSS Variables
+-- Prefers reduced motion
+-- Ways to learn
+-- Web performance
+-- Lighthouse
 -- Imba.io
+-- D3
+-- WebPack
+-- RollUp
+-- Snowpack
 -- Vue
 -- MEVN stack
 -- Joi
@@ -26,12 +101,15 @@ getstartedwith.dev
 -- WebVR
 -- Static sites with Eleventy and Github Actions
 -- Cross browser testing (Selenium on cloud)
+-- Unit Tests
 -- Serverless
 -- ES6 / Latest JS features
 -- Web Components
 -- Web Assembly
+-- Web Workers
 -- NoCode
 -- Crypto and blockchain
+-- Security
 -- Motion UI
 -- API-first development
 -- Accessibility
@@ -40,8 +118,13 @@ getstartedwith.dev
 -- Web Scraping with Puppeteer 
 -- Meta tags and social sharing
 -- Tauri
+-- Playing with Safari theme colours in JS
+-- What's new in Front-end frameworks
+-- Scroll snapping
 
-- Playing with Safari theme colours in JS
+- Scheduling Twitter posts
+-- With Svelte, Cron, local DB, posting to Twitter on a schedule
+-- Auth0 for login
 
-- What's new in Front-end frameworks
-- Scroll snapping
+
+
