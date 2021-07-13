@@ -4,8 +4,9 @@
 <ul class="post-list">
     {% for post in posts | sortDesc %}
     <li class="post-list-item">
+        <a class="post-list-item-image" href="{{ post.url }}"><img src="/assets/img/posts/{{ post.data.homeImage }}" alt="{{ post.data.title }}"></a>
         <a class="post-list-item-title" href="{{ post.url }}">{{ post.data.title }}</a>
-        <p class="post-list-item-exerpt">
+        <p class="post-list-item-excerpt">
             {{ post.data.description }}
         </p>
     </li>

@@ -66,17 +66,36 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 1.5rem;
 }
 h1 {
-    font-size: 4.242rem;
-    line-height: 4.5rem;
+    font-size: 2.75rem;
+    line-height: 3.5rem;
     margin-top: 3rem;
+}
+@media screen and (min-width: 400px) {
+    h1 {
+        font-size: 4.242rem;
+        line-height: 4.5rem;
+        margin-top: 3rem;
+    }
 }
 h2 {
-    font-size: 2.828rem;
-    line-height: 3rem;
-    margin-top: 3rem;
+    font-size: 1.828rem;
+    line-height: 2rem;
+    margin-top: 2rem;
+}
+@media screen and (min-width: 400px) {
+    h2 {
+        font-size: 2.828rem;
+        line-height: 3rem;
+        margin-top: 3rem;
+    }
 }
 h3 {
-    font-size: 1.414rem;
+    font-size: 1.214rem;
+}
+@media screen and (min-width: 400px) {
+    h3 {
+        font-size: 1.414rem;
+    }
 }
 h4 {
     font-size: 0.707rem;
@@ -117,9 +136,10 @@ code {
 body {
     max-width: 800px;
     margin: 0 auto;
-    padding: 1rem;
     -webkit-text-size-adjust: 100%;
     text-rendering: optimizeLegibility;
+    max-width: calc(100vw - 2rem);
+    width: 100%;
 }
 
 a {
@@ -161,6 +181,30 @@ details section p:first-child {
     margin-top: 3rem;
 }
 
+.back-to-top {
+    background: var(--highlight-colour-light);
+    border-radius: 10px;
+    font-size: 0.75rem;
+    position: fixed;
+    opacity: 0;
+    transition: opacity 0.5s ease-out;
+    will-change: opacity;
+    top: 0.25rem;
+    right: 0.5rem;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+}
+
+.back-to-top p {
+    margin: 0;
+}
+
+.back-to-top a {
+    padding: 0.25rem 0.5rem;
+}
+
 /* Footer */
 
 footer {
@@ -175,6 +219,7 @@ footer {
 
 .mailing-list form {
     display: flex;
+    flex-wrap: wrap;
     align-items: flex-end;
     padding: 1rem 0;
 }
@@ -201,19 +246,19 @@ footer {
     color: #fff;
     padding: 0.25rem 0.5rem;
     font-size: 118%;
-    margin: 0 0 0 0.25rem;
+    margin: 1rem 0 0;
+}
+
+@media screen and (min-width: 400px) {
+    .form-actions input  {
+        margin: 0 0 0 0.5rem;
+    }
 }
 
 /* Post page */
 
-.post-content img {
-    border-radius: 5px;
-    box-shadow: 0 0 0 5px var(--highlight-colour-light);
-    max-width: 100%;
-    margin: 0.5rem 0;
-}
-
 .post-list {
+    display: flex;
     list-style-type: none;
     padding: 0;
     margin: 0;
@@ -222,13 +267,27 @@ footer {
 .post-list-item {
     padding: 0;
     margin: 2rem 0;
+    max-width: 100%;
+}
+
+@media screen and (min-width: 800px) {
+    .post-list-item {
+        max-width: 50%;
+    }
+}
+
+.post-list-item-image img {
+    display: block;
+    max-width: 188px;
+    margin: 1rem 0;
 }
 
 .post-list-item-title {
-    font-size: 1.75rem;
+    font-size: 2rem;
 }
 
 .post-list-item-excerpt {
+    margin: 1rem 0;
 }
 
 .post-list-item-meta {
@@ -236,11 +295,18 @@ footer {
     color: var(--font-color-med);
 }
 
-/* TOC */
-
-.toc li {
-    color: var(--text-light);
+.about {
+    background: var(--highlight-colour-light);
+    border-radius: 5px;
+    padding: 1rem;
+    margin: 1rem 0 0;
 }
+
+.about h3 {
+    margin: 0.5rem 0 0;
+}
+
+/* TOC */
 
 .toc ol ol li {
     list-style: none;
@@ -256,7 +322,6 @@ footer {
     background: var(--highlight-colour-light);
     border-radius: 5px;
     padding: 1rem;
-    font-weight: bold;
     margin: 1rem 0 0;
 }
 
@@ -268,7 +333,6 @@ footer {
     list-style-type: none;
     margin: .5rem 0;
     padding: 0;
-    text-align: center;
 }
 
 .page-nav li { 
@@ -280,6 +344,13 @@ footer {
 
 .page-nav li .page-nav-page-num {
     padding: .25rem .5rem;
+}
+
+.post-content img {
+    border-radius: 5px;
+    box-shadow: 0 0 0 5px var(--highlight-colour-light);
+    max-width: 100%;
+    margin: 0.5rem 0;
 }
 
 [aria-current]{

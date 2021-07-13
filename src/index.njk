@@ -10,14 +10,15 @@ layout: layouts/_base.njk
 
 {{ postsList(pagination.items) }}
 
-<h3>About this site</h3>
+<section class="about">
+    <h3>Getting Started</h3>
 
-<p>Web development guides to get you from zero to "I know this".</p>
+    <p>Guides to help you get started with web development technology. If you're building web apps or websites, these guides will help you get up and running with the latest web technology, techniques and tools.<p>
 
-<p>Each post concentrates on a single idea or technology, and by the end of the post, you should know enough to get started using it.<p>
+    <p>Got an idea for a topic? <a href="mailto:donovan@getstartedwith.dev">Get in touch</a>.</p>
+</section>
 
-<p>Got an idea for a topic? <a href="mailto:donovan@getstartedwith.dev">Get in touch</a>.</p>
-
+<!--
 <nav>
     <ul class="page-nav">
         <li>{% if page.url != pagination.href.first %}<a href="{{ pagination.href.first }}">&lt;&lt;</a>{% else %}&lt;&lt;{% endif %}</li>
@@ -29,3 +30,4 @@ layout: layouts/_base.njk
         <li>{% if page.url != pagination.href.last %}<a href="{{ pagination.href.last }}">&gt;&gt;</a>{% else %}&gt;&gt;{% endif %}</li>
     </ul>
 </nav>
+-->

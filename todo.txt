@@ -1,5 +1,10 @@
 TODO:
 
+- Post images
+-- Social sharing image
+- Create epub / pdf / mobi?
+-- Certificate
+
 Layout:
 - Post
 - About link at top right - new page or popup?
