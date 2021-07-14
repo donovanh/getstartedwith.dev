@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    {% include 'partials/_head.njk' %}
+    <style>
+      html {
+        font-size: 250%;
+      }
+      .page-header, .page-header h3 {
+        margin-top: 0;
+      }
+      .wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+    </style>
+</head>
+<body class="social">
+    <div class="wrapper">
+    
+      <div>
+        {% include 'partials/_header.njk' %}
+
+        <main>
+              {{ content | safe }}
+              <p style="font-size: 0.75rem; text-align: right"><a href="/">getstartedwith.dev</a></p>
+        </main>
+      </div>
+
+    </div>
+
+    <script>
+      const queryString = window.location.search;
+      const urlParams = new URLSearchParams(queryString);
+      const titleText = urlParams.get('title');
+      const descriptionText = urlParams.get('description');
+
+      const title = document.querySelector('#title');
+      title.innerText = titleText;
+
+      const desc = document.querySelector('#description');
+      desc.innerText = descriptionText;
+    </script>
+</body>
+</html>

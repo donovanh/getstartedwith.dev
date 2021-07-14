@@ -10,3 +10,9 @@
 
 <link rel="stylesheet" type="text/css" href="/assets/css/code-highlight.css">
 <link rel="stylesheet" type="text/css" href="/assets/css/styles.css">
+
+<meta property="og:title" content="{%- if renderData.title %}{{ renderData.title }} - {% elif title %}{{ title }} - {% endif %}GetStartedWith.dev">
+<meta property="og:description" content="{{ description }}">
+<meta property="og:image" content="/assets/img/social/{%- if slug %}{{ slug }}{% else %}home{% endif %}.png">
+<meta property="og:url" content="https://getstartedwith.dev{{ page.url }}">
+<meta name="twitter:card" content="summary_large_image">

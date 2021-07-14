@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    {% include 'partials/_head.njk' %}
+    <style>
+      html {
+        font-size: 300%;
+      }
+      body {
+        max-width: 100%;
+      }
+      .page-header, .page-header h3 {
+        margin-top: 0;
+      }
+      .wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 90vh;
+      }
+      main {
+        padding-bottom: 6rem;
+      }
+      .meta {
+        text-align: right;
+        position: absolute;
+        bottom: 1.5rem;
+        right: 1.5rem;
+      }
+      #description {
+        width: 75%;
+      }
+    </style>
+</head>
+<body class="social">
+    <div class="wrapper">
+    
+      <div>
+
+        {% include 'partials/_header.njk' %}
+
+        <main>
+              {{ content | safe }}
+        </main>
+        <p class="meta">
+          Donovan Hutchinson <br>
+          <span style="font-size: 0.75rem;"><a href="/">GetStartedWith.dev</a></span>
+        </p>
+      </div>
+
+    </div>
+
+    <script>
+      const queryString = window.location.search;
+      const urlParams = new URLSearchParams(queryString);
+      const titleText = urlParams.get('title');
+      const descriptionText = urlParams.get('description');
+      const imageName = urlParams.get('image');
+
+      const title = document.querySelector('#title');
+      title.innerText = titleText;
+
+      const desc = document.querySelector('#description');
+      desc.innerText = descriptionText;
+
+      const image = document.querySelector('#image');
+      //image.src = `/assets/img/posts/${imageName}`;
+    </script>
+</body>
+</html>

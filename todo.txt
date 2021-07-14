@@ -1,9 +1,10 @@
 TODO:
 
-- Post images
--- Social sharing image
-- Create epub / pdf / mobi?
+-- Favicon
+-- Script to create epub / pdf / mobi
 -- Certificate
+-- Make homepage item title match book style
+-- Build process (series of steps?) that generates images
 
 Layout:
 - Post
