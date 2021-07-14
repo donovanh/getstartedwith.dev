@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Learn how to get started in web development.">
+<meta name="author" content="Donovan Hutchinson"/>
+<title>Book Cover Image layout - GetStartedWith.dev</title>
+
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/img/logos/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/logos/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/img/logos/favicon-16x16.png">
+
+<link rel="stylesheet" type="text/css" href="/assets/css/code-highlight.css">
+<link rel="stylesheet" type="text/css" href="/assets/css/styles.css">
+
+<!-- Social meta tags -->
+<meta property="og:title" content="Book Cover Image layout - GetStartedWith.dev">
+<meta property="og:description" content="">
+<meta property="og:image" content="/assets/img/social/home.png">
+<meta property="og:url" content="https://getstartedwith.dev/generate/book/">
+<meta name="twitter:card" content="summary_large_image">
+
+
+    <style>
+      html {
+        font-size: 300%;
+      }
+      body {
+        max-width: 100%;
+      }
+      .page-header, .page-header h3 {
+        margin-top: 0;
+      }
+      .wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 90vh;
+      }
+      main {
+        padding-bottom: 6rem;
+      }
+      .meta {
+        text-align: right;
+        position: absolute;
+        bottom: 1.5rem;
+        right: 1.5rem;
+      }
+      #description {
+        width: 75%;
+      }
+    </style>
+</head>
+<body class="social">
+    <div class="wrapper">
+    
+      <div>
+
+        <header class="page-header">
+    <h3><a href="/">Get Started With...</a></h3>
+</header>
+
+
+        <main>
+              
+<h1 id="title">Something</h1>
+
+<p id="description"></p>
+
+        </main>
+        <p class="meta">
+          Donovan Hutchinson <br>
+          <span style="font-size: 0.75rem;"><a href="/">GetStartedWith.dev</a></span>
+        </p>
+      </div>
+
+    </div>
+
+    <script>
+      const queryString = window.location.search;
+      const urlParams = new URLSearchParams(queryString);
+      const titleText = urlParams.get('title');
+      const descriptionText = urlParams.get('description');
+      const imageName = urlParams.get('image');
+
+      const title = document.querySelector('#title');
+      title.innerText = titleText;
+
+      const desc = document.querySelector('#description');
+      desc.innerText = descriptionText;
+
+      const image = document.querySelector('#image');
+      //image.src = `/assets/img/posts/${imageName}`;
+    </script>
+</body>
+</html>
