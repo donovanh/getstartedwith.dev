@@ -1,6 +1,8 @@
 /*
   Generate ebooks from the given MD files
   Before using, install Pandoc locally: https://pandoc.org/installing.html
+  THen use Calibre to generate pdf and mobi versions
+  Upload them to Gumroad
 */
 
 const fs = require('fs');
@@ -8,8 +10,9 @@ const glob = require('glob');
 const parseMD = require('parse-md').default;
 const epub = require('epub-gen');
 const MarkdownIt = require('markdown-it');
-const posthtml = require('posthtml')
-const highlight = require('posthtml-prism')
+const posthtml = require('posthtml');
+const highlight = require('posthtml-prism');
+const ebookConverter =  require('node-ebook-converter');
 
 const folder = './src/posts/**/*.md';
 const md = new MarkdownIt();
@@ -83,6 +86,9 @@ async function generateBook({ title, slug }, content) {
   const book = await new epub(options);
   await book.promise;
 
+  // Do some conversions
+  await convertEpubs(srcDir, slug);
+
 }
 
 async function codeHighlight(source) {
@@ -105,4 +111,13 @@ function signoff(title, slug) {
       <a href="https://getstartedwith.dev">getstartedwith.dev</a></p>
     `
   };
+}
+
+async function convertEpubs(srcDir, slug) {
+  console.log('Converting: ', slug);
+  return await ebookConverter.convert({
+    input: `${srcDir}src/books/${slug}.epub`,
+    output: `./src/books/${slug}.pdf`,
+    authors: 'Donovan Hutchinson'
+  });
 }

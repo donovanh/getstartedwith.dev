@@ -45,6 +45,16 @@ async function generateSocialImage({ title, description, homeImage, slug} ) {
   await page.screenshot({
     path: `./src/assets/img/social/${slug}.png`
   });
+
+  await page.setViewport({
+    width: 1000,
+    height: 1000,
+    deviceScaleFactor: 1,
+  });
+  await page.screenshot({
+    path: `./src/assets/img/social/${slug}-square.png`
+  });
+
   console.log('Social screenshot written for: ', slug);
 }
 
