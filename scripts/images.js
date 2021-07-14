@@ -2,11 +2,12 @@
   Generate social images and book covers for all posts
 */
 
-const folder = './src/posts/**/*.md';
 const fs = require('fs');
 const glob = require('glob');
 const parseMD = require('parse-md').default;
 const puppeteer = require('puppeteer');
+
+const folder = './src/posts/**/*.md';
 
 glob(folder, {}, function (er, files) {
   let i = 1; // Count to include ignored template

@@ -1,10 +1,14 @@
 TODO:
 
--- Favicon
 -- Script to create epub / pdf / mobi
+-- Cover image
+-- Styling
+-- Prepping content from MD file
+-- Adding copyright notice
+-- Adding "read more at getstarted.dev" text at end
+
+
 -- Certificate
--- Make homepage item title match book style
--- Build process (series of steps?) that generates images
 
 Layout:
 - Post
