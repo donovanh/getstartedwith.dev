@@ -11,7 +11,6 @@ function isScrolled() {
 function loop() {
 
   if (isScrolled()) {
-    console.log('is scrolled');
     backToTop.classList.add('visible');
   } else {
     backToTop.classList.remove('visible');
@@ -19,5 +18,10 @@ function loop() {
 
   scroll(loop);
 }
+
+backToTop.addEventListener('click', function(e) {
+  e.preventDefault();
+  window.scrollTo(0, 0);
+});
 
 loop();
