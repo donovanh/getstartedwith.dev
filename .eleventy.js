@@ -13,6 +13,8 @@ module.exports = function(eleventyConfig) {
 
     eleventyConfig.addPassthroughCopy("src/CNAME");
 
+    eleventyConfig.addPassthroughCopy("src/books");
+
     // parse excerpts on posts
     eleventyConfig.setFrontMatterParsingOptions({
         excerpt: true,

@@ -1,41 +1,16 @@
 TODO:
 
--- Script to create epub / pdf / mobi
--- Cover image
--- Styling
--- Prepping content from MD file
--- Adding copyright notice
--- Adding "read more at getstarted.dev" text at end
-
+-- Improve Buy This Guide buttons
+-- Put buy option on home page alonside read online
+- Homepage description tag
 
 -- Certificate
 
-Layout:
-- Post
-- About link at top right - new page or popup?
-- Style various elements in the article
--- Code blocks
--- Images
--- Inline video
--- CodePen embeds
-
-
--- Header
--- Auto generated social media images (use puppet and a static page)
--- Tags
--- Date
--- Collection
--- "Pre-requisites" details block
--- Summary
--- Content
--- Subscribe callout (part of footer)
--- Favicons
 -- App manifest
 -- Lazy load images
 -- Some cool CSS tweaks https://gist.github.com/jackdomleo7/55659bafe581d19cc341ef775d6a9e6b
 -- Set up email forwarding
 -- Generate certificate using https://www.npmjs.com/package/jspdf
--- "Back to top" link
 
 Phase two:
 -- Up Next callout
@@ -61,13 +36,6 @@ Posts structure:
 -- Subtopic (e.g. React > Redux, Testing -> Cypress)
 - Collection
 
-Frontmatter:
-- main_topic
-- sub_topic (optional)
-- collection (optional) (a group of related posts)
--- collection_order (optional) (ordering for showing collections)
-- up_next (article stub - work out what this would need)
-
 Replace Moment with DateFns (or native?)
 
 (Put together a CSS topic collection)
@@ -75,7 +43,7 @@ Replace Moment with DateFns (or native?)
 Topics to write about:
 
 - Generating "live" share images with Github Actions
-- Web components with Svelte
+- Web components
 - Night mode CSS
 - Getting started with:
 -- GraphQL
