@@ -9,7 +9,7 @@
     "serve": "eleventy --serve",
     "dev": "eleventy --serve",
     "buildimages": "node ./scripts/images",
-    "deploy": "npm run clean && eleventy build && gh-pages -d _site",
+    "deploy": "npm run clean && eleventy build && gh-pages -d dist",
     "clean": "rm -rf dist/"
   },
   "author": "Donovan Hutchinson",
