@@ -53,6 +53,7 @@ async function generateBook({ title, slug }, content) {
 
   const cleanedHTML = html
     .replace(/&quot;/g, '"')
+    .replace(/&lt;/g, '>')
     .replace(/&gt;/g, '>')
     ;
 
@@ -86,7 +87,7 @@ async function generateBook({ title, slug }, content) {
 
 async function codeHighlight(source) {
   return posthtml([
-    highlight({ inline: false })
+    highlight({ inline: true })
   ])
   .process(source)
   .then(result => result);
