@@ -11,6 +11,8 @@ module.exports = function(eleventyConfig) {
     // copy static files directly, with same directory structure
     eleventyConfig.addPassthroughCopy("src/assets");
 
+    eleventyConfig.addPassthroughCopy("src/CNAME");
+
     // parse excerpts on posts
     eleventyConfig.setFrontMatterParsingOptions({
         excerpt: true,
