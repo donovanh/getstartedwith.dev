@@ -2,7 +2,7 @@ const pluginRSS = require('@11ty/eleventy-plugin-rss');
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const moment = require('moment');
 moment.locale('en');
-const pluginTOC = require('eleventy-plugin-toc')
+const pluginTOC = require('eleventy-plugin-toc');
 
 module.exports = function(eleventyConfig) {
     // allows templates to add additional data
