@@ -1,8 +1,52 @@
 TODO:
 
+- Homepage description tag
 -- Improve Buy This Guide buttons
 -- Put buy option on home page alonside read online
-- Homepage description tag
+
+- Promotion
+-- Mailing lists
+-- ...
+-- CSS Animation Weekly
+-- Reddit
+-- Hacker News
+-- Twitter
+-- Others...?
+
+Newsletters: 
+- https://javascriptweekly.com
+- https://frontendfoc.us
+- Node weekly (all 3 of these Cooperpress)
+- editor@cooperpress.com
+
+- ES.next news: http://goo.gl/forms/DjtlsLps6P
+- Superhero.js mail@superherojs.com
+- Fullweb.io https://fullweb.typeform.com/to/JGSNQ8
+- Ponyfoo https://ponyfoo.com/weekly/submissions
+- JavaScript kicks https://javascriptkicks.com/submit
+
+Reddit:
+-- r/javascript
+-- r/webdev
+-- 
+
+Developer Drive	info@developerdrive.com
+Jake Bresnehan / Web Design Weekly	jakebresnehan@gmail.com
+Peter / HTML5 Weekly	peter@html5weekly.com
+Sitepoint	editor@sitepoint.com
+Web Designer Depot	info@webdesignerdepot.com
+Friday Frontend	kball@zendev.com
+Frontend weekly	galen@frontenddevweekly.com
+
+CSS-Tricks	@css
+Codrops	@codrops
+Val Head	
+Rachel Nabors	
+http://frontendfront.com/	
+Sidebar.io	
+Zoran Jambor / CSS Weekly	zjambor11@gmail.com
+
+
 
 -- Certificate
 

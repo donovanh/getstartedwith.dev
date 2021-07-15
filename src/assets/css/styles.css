@@ -2,7 +2,7 @@
     /* Custom variable values here */
     --highlight-colour: #0094cf;
     --highlight-colour-light: #f4f2f0;
-    --highlight-colour-hover: #00b7ff;
+    --highlight-colour-hover: #00719e;
     --text-light: #999;
 }
 
@@ -207,8 +207,62 @@ details section p:first-child {
 }
 
 .back-to-top a {
-    padding: 0.25rem 0.5rem;
+    padding: 0.5rem;
+    line-height: 2.5;
 }
+
+/* Buy button */
+
+.buy-button {
+    font-size: 0.9rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+    margin-left: 1rem;
+}
+
+.buy-button a {
+    background: var(--highlight-colour-light);
+    padding: 0.25rem 1rem;
+    border-radius: 10px;
+    padding-left: 1.5rem;
+}
+
+.buy-button .image {
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: 2px solid var(--highlight-colour-light);
+    border-radius: 5px;
+    height: 80px;
+    width: 50px;
+    position: absolute;
+    left: -1.25rem;
+    transform: rotateZ(-15deg) scale(0.75);
+}
+
+.buy-button .formats {
+    padding: 0 0 0 0.75rem;
+    color: var(--text-light);
+    font-size: 0.75rem;
+}
+
+.buy-button.small {
+    font-size: 0.75rem;
+    margin: 0;
+}
+
+.buy-button.small a {
+    border: 4px solid #fff;
+}
+
+.buy-button.small .formats {
+    display: none;
+}
+
+
+
+/* Container that appears on scroll */
 
 .buy-this-guide {
     position: fixed;

@@ -6,6 +6,7 @@ const fs = require('fs');
 const glob = require('glob');
 const parseMD = require('parse-md').default;
 const puppeteer = require('puppeteer');
+const resizeImg = require('resize-img');
 
 const folder = './src/posts/**/*.md';
 
@@ -71,8 +72,18 @@ async function generateBookImage({ title, description, homeImage, slug} ) {
     height: 1600,
     deviceScaleFactor: 2.5,
   });
-  await page.screenshot({
-    path: `./src/assets/img/books/${slug}.png`
-  });
+  const path = `./src/assets/img/books/`;
+  await page.screenshot({ path: `${path}${slug}.png` });
+
+  // Create thumbnail book image
+  await createThumbnail(path, slug);
   console.log('Book image written for: ', slug);
+}
+
+async function createThumbnail(path, slug) {
+  const image = await resizeImg(fs.readFileSync(`${path}${slug}.png`), {
+      width: 100,
+      height: 160
+  });
+  fs.writeFileSync(`${path}${slug}-thumb.png`, image);
 }
