@@ -2,20 +2,20 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Get Started With Web Development</title>
   <subtitle>Learn all about web development</subtitle>
-  <link href="https://eleventy-skeleton.netlify.app/feed.xml" rel="self"/>
-  <link href="https://eleventy-skeleton.netlify.app/"/>
+  <link href="https://getstartedwith.dev/feed.xml" rel="self"/>
+  <link href="https://getstartedwith.dev/"/>
   <updated>2021-06-25T23:00:00+01:00</updated>
-  <id>https://eleventy-skeleton.netlify.app/</id>
+  <id>https://getstartedwith.dev/</id>
   <author>
     <name>Donovan Hutchinson</name>
-    <email>getstarted@hop.ie</email>
+    <email>donovan@getstartedwith.dev</email>
   </author>
   
   <entry>
     <title>GraphQL</title>
-    <link href="https://eleventy-skeleton.netlify.app/graphql/"/>
+    <link href="https://getstartedwith.dev/graphql/"/>
     <updated>2021-06-25T23:00:00+01:00</updated>
-    <id>https://eleventy-skeleton.netlify.app/graphql/</id>
+    <id>https://getstartedwith.dev/graphql/</id>
     <content type="html">&lt;h2 id=&quot;what-is-graphql&quot; tabindex=&quot;-1&quot;&gt;What is GraphQL&lt;/h2&gt;
 &lt;p&gt;GraphQL is a query language that is designed to be a better way of requesting data from APIs.&lt;/p&gt;
 &lt;p&gt;In recent years, most web-based APIs worked in a style called &lt;a href=&quot;https://en.wikipedia.org/wiki/Representational_state_transfer&quot;&gt;REST&lt;/a&gt;. With this approach we would interact with servers to request and send data using different URLs that defined the kind of response we wanted.&lt;/p&gt;
@@ -82,7 +82,7 @@
 &lt;p&gt;You should see some output in the command line like:&lt;/p&gt;
 &lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;🚀  Server ready at http://localhost:4000/&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;If you open your web browser and go to the address &lt;code&gt;http://localhost:4000/&lt;/code&gt; you should see the Apollo web interface.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://eleventy-skeleton.netlify.app/assets/img/posts/graphql/apollo-server.png&quot; alt=&quot;A default Apollo server web view&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://getstartedwith.dev/assets/img/posts/graphql/apollo-server.png&quot; alt=&quot;A default Apollo server web view&quot;&gt;&lt;/p&gt;
 &lt;h3 id=&quot;hello-graphql-world&quot; tabindex=&quot;-1&quot;&gt;Hello GraphQL world&lt;/h3&gt;
 &lt;p&gt;Let&#39;s try out our new GraphQL server by sending it a query.&lt;/p&gt;
 &lt;p&gt;On the left panel we find some comments (starting with &lt;code&gt;#&lt;/code&gt;). Replace the comments with the following query:&lt;/p&gt;
@@ -318,7 +318,7 @@
 &lt;p&gt;We then make a request to the server looking for &lt;code&gt;MoviesStarring&lt;/code&gt;. We set &lt;code&gt;variables&lt;/code&gt; JSON to include the actor name, then send the result of this query to the &lt;code&gt;showMovieInfo&lt;/code&gt; function.&lt;/p&gt;
 &lt;p&gt;The &lt;code&gt;showMovieInfo&lt;/code&gt; function gets the name and a list of movies, and uses these to built then show the &lt;code&gt;ul&lt;/code&gt; list.&lt;/p&gt;
 &lt;p&gt;Now if you refresh the page, you should be able to select a name and see some of the movies they starred in.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://eleventy-skeleton.netlify.app/assets/img/posts/graphql/graphql-apollo-example.png&quot; alt=&quot;A GraphQL-based movie search example webpage&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://getstartedwith.dev/assets/img/posts/graphql/graphql-apollo-example.png&quot; alt=&quot;A GraphQL-based movie search example webpage&quot;&gt;&lt;/p&gt;
 &lt;h4 id=&quot;showing-query-information&quot; tabindex=&quot;-1&quot;&gt;Showing query information&lt;/h4&gt;
 &lt;p&gt;If you want to see a little extra info, I&#39;ve added some more logic to the &lt;a href=&quot;https://hop.ie/graphql-apollo-example/&quot;&gt;online GraphQL Apollo example&lt;/a&gt;, showing the query info to the bottom of the screen. This might be helpful to see the queries as they occur.&lt;/p&gt;
 &lt;h3 id=&quot;adding-mutations&quot; tabindex=&quot;-1&quot;&gt;Adding mutations&lt;/h3&gt;
