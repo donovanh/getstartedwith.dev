@@ -66,6 +66,7 @@ Phase two:
 -- Sidebar: Collection links, if set
 -- Look into ways of generating ebooks from the posts
 --- Sell them? Or offer a compilation for sale?
+- Fancy underline effect on link hover
 
 - Posts
 - Static page
