@@ -1,8 +1,9 @@
 TODO:
 
-- Homepage description tag
--- Improve Buy This Guide buttons
+- Mention this on GraphQL next steps https://www.apollographql.com/docs/apollo-server/security/authentication/
+-- Improve Buy This Guide buttons / links to open modal iframe
 -- Put buy option on home page alonside read online
+--- Buy eBook / Read online
 
 -- Certificate
 
@@ -10,11 +11,13 @@ TODO:
 -- Lazy load images
 -- Some cool CSS tweaks https://gist.github.com/jackdomleo7/55659bafe581d19cc341ef775d6a9e6b
 -- Set up email forwarding
+-- Maybe something like canvas-confetti when you get to end
 -- Generate certificate using https://www.npmjs.com/package/jspdf
+-- Try Netlify with optimisations
 
 Phase two:
 -- Up Next callout
--- CSS Gulp pipeline (combine and minify)
+-- Snowpack / PostCSS workflow https://zellwk.com/blog/eleventy-snowpack-sass-postcss/
 -- Night mode
 -- Prefers reduced motion
 -- Header animated decoration
@@ -44,44 +47,45 @@ Replace Moment with DateFns (or native?)
 Topics to write about:
 
 - Generating "live" share images with Github Actions
-- Web components
-- Night mode CSS
 - Getting started with:
--- GraphQL
--- MongoDB
--- web3 / Ethereum
--- React
--- Redux Toolkit
+-- React (with bonus Redux Toolkit)
 -- TypeScript
 -- Svelte (&& SvelteKit)
+-- NextJS 
+-- MongoDB
+-- Jest
+-- D3
+-- Static websites
+-- Github Actions
+-- Web components
+-- React Native
+-- Serverless
+-- Progressive Web Apps
+-- Kubernetes
+-- Tailwind CSS
+-- Vue
+-- web3 / Ethereum
 -- Astro
 -- SolidJS
 -- Temporal (JS DateTime)
+-- Snowpack
 -- Lighthouse
+-- Night mode CSS
 -- Desktop Push Notifications
--- Tailwind CSS
 -- Image-Set
 -- CSS @supports
 -- CSS Variables
 -- Prefers reduced motion
 -- Ways to learn
 -- Web performance
--- Lighthouse
 -- Imba.io
--- D3
 -- WebPack
 -- RollUp
--- Snowpack
--- Vue
 -- MEVN stack
 -- Joi
 -- Voice control
--- Progressive Web Apps
 -- WebVR
--- Static sites with Eleventy and Github Actions
 -- Cross browser testing (Selenium on cloud)
--- Unit Tests
--- Serverless
 -- ES6 / Latest JS features
 -- Web Components
 -- Web Assembly
