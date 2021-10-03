@@ -1,6 +1,7 @@
 TODO:
 
 - Mention this on GraphQL next steps https://www.apollographql.com/docs/apollo-server/security/authentication/
+- And this https://the-guild.dev/blog/introducing-envelop
 -- Improve Buy This Guide buttons / links to open modal iframe
 -- Put buy option on home page alonside read online
 --- Buy eBook / Read online
@@ -52,23 +53,33 @@ Topics to write about:
 -- TypeScript
 -- Svelte (&& SvelteKit)
 -- NextJS 
+-- NestJS
 -- MongoDB
 -- Jest
 -- D3
--- Static websites
+-- Hugo
+-- CSS Grid
 -- Github Actions
 -- Web components
+-- Vite.js
 -- React Native
 -- Serverless
 -- Progressive Web Apps
 -- Kubernetes
+-- Refactoring
+-- Web performance
+-- Accessibility
+-- WebVR
 -- Tailwind CSS
+-- SolidJS
 -- Vue
 -- web3 / Ethereum
+-- Joi
 -- Astro
--- SolidJS
 -- Temporal (JS DateTime)
 -- Snowpack
+-- Astro
+-- Tropical
 -- Lighthouse
 -- Night mode CSS
 -- Desktop Push Notifications
@@ -77,17 +88,13 @@ Topics to write about:
 -- CSS Variables
 -- Prefers reduced motion
 -- Ways to learn
--- Web performance
 -- Imba.io
--- WebPack
 -- RollUp
+-- WebPack
 -- MEVN stack
--- Joi
 -- Voice control
--- WebVR
 -- Cross browser testing (Selenium on cloud)
 -- ES6 / Latest JS features
--- Web Components
 -- Web Assembly
 -- Web Workers
 -- NoCode
@@ -95,7 +102,6 @@ Topics to write about:
 -- Security
 -- Motion UI
 -- API-first development
--- Accessibility
 -- Variable fonts
 -- Test-driven development
 -- Web Scraping with Puppeteer 
