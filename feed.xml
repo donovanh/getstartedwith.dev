@@ -4,7 +4,7 @@
   <subtitle>Learn all about web development</subtitle>
   <link href="https://getstartedwith.dev/feed.xml" rel="self"/>
   <link href="https://getstartedwith.dev/"/>
-  <updated>2021-06-25T23:00:00+01:00</updated>
+  <updated>2021-07-13T23:00:00+01:00</updated>
   <id>https://getstartedwith.dev/</id>
   <author>
     <name>Donovan Hutchinson</name>
@@ -14,7 +14,7 @@
   <entry>
     <title>GraphQL</title>
     <link href="https://getstartedwith.dev/graphql/"/>
-    <updated>2021-06-25T23:00:00+01:00</updated>
+    <updated>2021-07-13T23:00:00+01:00</updated>
     <id>https://getstartedwith.dev/graphql/</id>
     <content type="html">&lt;h2 id=&quot;what-is-graphql&quot; tabindex=&quot;-1&quot;&gt;What is GraphQL&lt;/h2&gt;
 &lt;p&gt;GraphQL is a query language that is designed to be a better way of requesting data from APIs.&lt;/p&gt;
