@@ -1,0 +1,210 @@
+# Svelte (and Sapper)
+
+- Presentation including things to note, comparison to existing frameworks
+
+# Comparisons
+- Svelte is a compiler rather than Framework / Library
+- Compile means small, fast bundles (somewhat better than others)
+- Core features: very light but more than React, fewer than Angular / Vue
+- Not as sophisticated in some ways - React suspense for example, differential loading in Angular, browser-specific bundles in Vue
+- New, but small community. React / Angular / Vue much more popular
+- Worth exploring to learn new concepts
+- Not much in terms of jobs (yet)
+- Worth trying on small / independent projects
+
+# Slides
+
+- Svelte: What is Svelte
+- Sapper: What is Sapper
+- Comparison: Pros and cons vs React etc
+- Svelte / Sapper example walkthrough
+-- https://svelte-examples.donovanh.now.sh
+-- https://github.com/donovanh/svelte-examples
+- Course Meetus example (run locally)
+- Amazin example
+-- https://github.com/donovanh/amazin
+-- Show code size in inspector, show it working
+- More info (links to Svelte / Sapper sites)
+-- Link also to the Thinking in Reactivity talk
+- Thanks!
+
+## Components
+- How props are passed and use of "export"
+- Debugging props with $$props
+-- (other ways to use $: for reactivity)
+
+## Bind
+- use bind:value={value} or even shorthand `bind:value` vs on:input={fn}
+-- dynamic binding like <Component bind:foo /> (where foo is export in component) on component works too as long as it's not an input with a dynamic "type"
+-- bind:value on number type input field returns value as number
+-- bind:group (radio buttons, or with checkboxes for array)
+-- Example: 3 radios, and select with same binding showing update
+-- Using bind:this={foo} to get reference to element (powerful)
+--- Can be used with exported functions from within components
+-- use console.dir(element) to debug
+
+## Forms
+- on:submit|preventDefault
+- Validation (section 9)
+
+## Classes
+- shortcuts, like class:invalid={!valid}
+
+## Loops and conditionals
+- {#each blah of blah, index} ... {/else} ... {/each}
+
+## Input events
+- on:input / on:change etc - propogates up from child components to equivalent in parent 
+- Creating and dispatching events - event.details
+
+## Slots 
+- Slots for reusable components instead of variables for data
+-- Named slots, default values
+
+## $ Reactivity
+- Variables are dynamically created
+-- $: dynamicVariable = 'foo';
+- $: console.log(foo) useful for debugging
+
+## Stores
+Create then export store with writable()
+- Subscribe to store (foo.subscribe)
+- Set or update (foo.set, foo.update)
+- ALWAYS clear subscriptions on destroy (onDestroy)
+- OR use shortcut store reference `$foo` for simple auto subscriptions
+- Best practice: subscribe only when needed and immediately unsub (use `get` shorthand)
+- Use readable for automatically generated content, location, timers
+- Best practice: Create custom store methods in the store file
+
+## Transitions
+- Use tweened or spring like a store, can work on arrays, arrays of objects, as long as they contain numbers or dates
+-- Example: progress bar
+- transition is applied to element, like transition:fade={{settings}}
+- Check docs for svelte/motion and svelte/transition
+- Transitions are revertable
+- transition:fly|local - when single items should animate note whole sets
+- use on:introstart / introend / outrostart / outroend events
+- in / out instead of `transition:foo` for different animations (not cancellable)
+- animate:flip to move items out of way
+-- Example might be a twitter-style stream of content
+- See also deferred animations https://svelte.dev/tutorial/deferred-transitions
+
+## Animation (flip)
+- Can only be applied to direct child of {#each} and not a Svelte component (maybe use a wrapper div)
+- Example: Series of boxes with "new box" button, click star to add an animated star badge, or remove to remove
+
+## Data
+- Use Firebase for easily developing web based apps
+- Fetch to get / post data as needed
+- onMount can be useful for wrapping http requests (when they should ONLY be on client)
+-- OR store the fetch promise in variable and use `await` in code
+-- Best for when the data won't need manipulated
+
+
+## Special components
+- Dynamic components: svelte:component with this={ComponentName}
+- Recursive: use <svelte:self {props} />
+
+## Misc
+- Accessing windows / body / head
+-- svelte:window - safer in SSR, better practice than `window.foo` in script
+-- Example: <svelte:window bind:scrollY={variable} />
+-- <svelte:body...> instead of document.body (mouse-enter for example)
+-- <svelte:head>...</svelte:head> for any <head> content
+- Cross-component scripts
+-- <script context="module"> code that only runs once when component added
+- rel="prefetch" built in (awesomeness)
+
+## Sapper
+- Based on a Node server with SSR and routing
+- Routing
+- Server-side rendering - faster first render, SEO benefits
+-- Sapper handles automatically
+- Includes service-worker also
+- Route components in /routes folder
+- UI components in /components folder
+- When preLoad used, server preloads on first load but client loads the code on subsequent requests
+
+## Deploying
+- Sapper/Svelte needs server (now.sh is handy)
+- Svelte sites can be static  or pre-built (static snapshot from local Sapper instance) and deployed to static hosting
+-- For static Svelte site / components you can run `build`
+- Embedded / Widget style
+- Server apps: run `build` and ./__sapper__/build contains full app
+-- Or `npm run export` to pre-render serverside app as static under `__sapper__/export`
+
+- Use Elastic Beanstalk for server apps
+
+- Svelte Web components
+-- Generate web compontents using Svelte!
+-- npx degit sveltejs/component-template svelte-web-component
+-- npm i
+-- npm build - result is in TODO
+
+- Downsides: https://dev.to/richharris/why-i-don-t-use-web-components-2cia
+
+- Example: Amazin.now.sh
+-- Serverside rendering
+-- Very small bundle size
+-- Includes validation and logic to generate URL
+-- Includes back end logic to look up country and redirect
+
+## Testing
+- Storybook - some issues with Stores
+- Svelte Testing Library https://github.com/testing-library/svelte-testing-library
+
+# Best Practices
+
+- JS, then Styles, then HTML
+
+```
+<script>
+  // logic goes here
+</script>
+
+<style>
+  /* styles go here */
+</style>
+
+<!-- markup (zero or more items) goes here -->
+```
+
+- Order of import / exports
+- Folder structures 
+-- Feature folders (Products, Carts)
+-- Functional folders (UI, ...)
+- Use of stores
+
+
+# Misc thoughts
+
+- What IS Svelte anyway? A language? https://gist.github.com/Rich-Harris/0f910048478c2a6505d1c32185b61934
+
+ShopIreland deploy plan:
+- API (host on my own server for now?)
+- Host sapper/svelte app on Now.sh
+
+# To Highlight
+
+- Light weight output
+- Simple to get started with
+- Adds some terse and powerful tools
+- Integrations - Preprocessors, Sass, Typescript, etc
+- Does have some gotchas
+- Oversold the "problem" it solves?
+
+## Svelte specifics
+
+- Svelte adds language extensions - export prop, $: reactive, and $store
+- Scopes CSS automatically
+- ...
+
+## Sapper specifics
+
+- File based routing (with regular expressions)
+- Serverside JS
+- Serverside rendering
+
+
+# Examples (to build to show specifics):
+

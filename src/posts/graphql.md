@@ -1,14 +1,15 @@
 ---
 title: GraphQL
 description: Learn how to build a simple GraphQL API.
-date: 2021-06-26
-updated: 2020-06-26
+date: 2021-07-14
+updated: 2021-07-14
 slug: graphql
 tags:
     - GraphQL
 permalink: "{{ slug }}/"
 homeImage: graphql/graphql.svg
 lead: Let's learn how to use GraphQL with JavaScript, using Node.js and Apollo to build and explore a simple API.
+book: 'graphql/GraphQL.zip'
 ---
 
 ## What is GraphQL
