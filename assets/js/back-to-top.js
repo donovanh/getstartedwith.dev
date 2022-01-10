@@ -1,5 +1,5 @@
 const backToTop = document.querySelector("#back-to-top");
-const buyThisGuide = document.querySelector("#download-this-guide");
+const downloadThisGuide = document.querySelector("#download-this-guide");
 
 const scroll =
   window.requestAnimationFrame ||
@@ -14,10 +14,10 @@ function isScrolled() {
 function loop() {
   if (isScrolled()) {
     backToTop.classList.add("visible");
-    buyThisGuide.classList.add("visible");
+    downloadThisGuide.classList.add("visible");
   } else {
     backToTop.classList.remove("visible");
-    buyThisGuide.classList.remove("visible");
+    downloadThisGuide.classList.remove("visible");
   }
 
   scroll(loop);
