@@ -9,6 +9,7 @@ tags:
 permalink: "{{ slug }}/"
 homeImage: graphql/graphql.svg
 lead: Let's learn how to use GraphQL with JavaScript, using Node.js and Apollo to build and explore a simple API.
+book: 'graphql/GraphQL.zip'
 ---
 
 ## What is GraphQL

@@ -1,0 +1,445 @@
+Web Components talk
+
+# Topics to cover
+
+- What are web components 
+-- simple example
+- Why are they useful
+- Browser support
+- Tooling
+- Downsides: https://dev.to/richharris/why-i-don-t-use-web-components-2cia
+
+## open-wc
+
+- Why use open-wc
+- Setting up an app
+- Linting
+- Testing
+- Development
+- Building
+
+Random things to include
+
+- Benefits of vanilla web components generally
+
+- Building wc using Lit-HTML
+- Making a vanilla JS wc
+-- Basic structure
+-- Properties, life cycle hooks
+- Using HTML template tag
+- Shadow DOM
+- Components using components (speech bubbles used in a conversation component)
+- Using it in frameworks
+- Generating using lit-html
+- Functional style using Haunted
+- Making a wc in Svelte (https://www.youtube.com/watch?v=p3u5rdJH9BM)
+- Polyfills and browser support
+- Using on static websites
+- Testing components
+- Progressive components (e.g. web-share-wrapper) starts as a link, progressively enhances to a share sheet
+
+- Downsides to web components
+-- Low level API, can be verbose
+
+- Tooling is growing
+-- Initially Polymer, then Scate, Billinger, Angular, Vue, Svelte, Stencil
+
+"Web components are designed for sharing UI between frameworks"
+
+Benefits to different ways of creating wc
+
+Cool Examples
+
+- Create a "speech bubble" component
+- Re-create it using native, lit-html and Svelte to show differing approaches
+- Extend a Heading (specific element) type to make it a special heading
+- Show a-frame example(s) of webGL content (make a NearForm example)
+
+
+
+### Course Notes
+
+# Why web components - vs React, Vue or jQuery plugins
+
+jQuery plugins
+- drop-in, ready to go
+- but they have many imports (CSS, JS)
+- require specific HTML structure
+- Can have version conflicts and often underused dependencies / redundant code.
+
+React etc
+- more than just components. State, routing, and more for complex front end apps.
+- also present structure on how to write code, approach known issues such as form validation.
+- complex to learn
+- not re-usable across other frameworks or versions of 
+
+Web Components
+- less code, just vanilla JS
+- easily reusable
+- low-level API makes them complex, requires some learning
+- no extra features such as routing, state management etc
+- useful as standalone component building to then use within frameworks
+
+# Browser Support
+
+- https://caniuse.com/#feat=shadowdomv1 shows ~89%
+- Also see table on https://www.webcomponents.org/
+- https://www.webcomponents.org/polyfills
+
+Use Polyfill to make it work in IE/Edge, or a tool like Stencil.js for automatic browser support
+
+# Web Component basics
+
+- Creating using native JS
+- Building using... "Custom HTML Element" (registering our own HTML tags)
+- and Shadow DOM (scoped)
+- and Templates / Slots
+
+- Browser support:
+-- IE (needs polyfill)
+-- Edge (needs polyfill, under development though)
+-- Chrome / FF - latest versions fine
+-- Safari - Supports "Autonomous custom elements" but not "Customized built-in elements".
+
+Basic structure:
+
+```
+class MyComponent extends HTMLElement {
+  constructor() {
+    super();
+    // initial setup
+  }
+
+  // connectedCallback()
+  // disconnectedCallback()
+  // attributeChangedCallback()
+}
+
+customElements.define('my-component', MyComponent);
+```
+
+- Internal methods and variables should start with underscore, e.g.
+
+```
+class Tooltip extends HTMLElement {
+  constructor() {
+    super();
+    this._tooltipContainer;
+  }
+
+  connectedCallback() {
+    const tooltipIcon = document.createElement('span');
+    tooltipIcon.textContent = ' (?)';
+    tooltipIcon.addEventListener('mouseenter', this._showTooltip.bind(this));
+    tooltipIcon.addEventListener('mouseleave', this._hideTooltip.bind(this));
+    this.appendChild(tooltipIcon);
+  }
+
+  _showTooltip() {
+    this._tooltipContainer = document.createElement('div');
+    this._tooltipContainer.textContent = 'This is the tooltip text';
+    this.appendChild(this._tooltipContainer);
+  }
+
+  _hideTooltip() {
+    this.removeChild(this._tooltipContainer);
+  }
+
+  // disconnectedCallback()
+  // attributeChangedCallback()
+}
+
+customElements.define('nf-tooltip', Tooltip);
+```
+
+## getAttribute
+
+- Use this.getAttribute to get attribute values
+
+## Shadow dom
+
+- Init shadow DOM with this.attachShadow({ mode: 'open'}); in `constructor`
+- Then when appending to DOM, use `this.shadowRoot.appendChild`
+
+## templates
+
+<template id="my-template">
+  <span> (?)</span>
+</template>
+
+- Access using `const template = document.querySelector('#my-template');`
+- Then apply to shadow dom like:
+
+```
+this.shadowRoot.appendChild(template.content.cloneNode(true)); // true for a deep clone
+```
+
+OR
+
+- Set HTML in the JS like:
+
+```
+this.shadowRoot.innerHTML = '<slot>Some default</slot><span> (?)</span>';
+```
+
+OR using template literals:
+
+```
+this.shadowRoot.innerHTML = `
+  <style>
+   /* ... can write scoped styles here */
+  </style>
+  <slot>Some default</slot>
+  <span> (?)</span>
+`;
+```
+
+## Slots
+
+<template id="my-template">
+  <slot></slot>
+  <span> (?)</span>
+</template>
+
+Note: Content inside `<my-component>Content</my-component>` is not actually put inside the shadow dom. It's inserted into the DOM adjacent to the shadow dom instance.
+
+### Naming slots
+
+Using `<slot name="example"></slot>` in the custom element can then receive specific content such as:
+
+```
+<my-component>
+  <h1 slot="example">Content here</h1>
+</my-component>
+```
+
+### Detecting change in slotted content
+
+- Find all slots using querySelectorAll
+- Then can access them:
+
+```
+const slots = this.shadowRoot.querySelectorAll('slot');
+slots[1].addEventListener('slotchange', (event) => {
+  console.dir(slots[1].assignedNodes())
+})
+```
+
+- slots[1].assignedNodes() outputs the given HTML or text content for the slot
+
+## Extending HTML tags
+
+- class ConfirmLink extends HTMLAnchorElement {...
+- define by specifying element also: `customElements.define('nf-confirm-link', ConfirmLink, { extends: 'a' });`
+- then use like:
+
+```
+  <a is="nf-confirm-link" href="">Blah</a>
+```
+
+## ConnectedCallback
+
+Use this when we need to access properties or attach listeners within the custom element, after bring rendered. Events can be added to shadow root elements within the constructor though.
+
+## Styling slotted content
+
+Slot content will be exposed to the light DOM for styling but can be styled using styling within the component like:
+
+```
+::slotted(*) // For all slotted content
+::slotted(span) // For specific items
+
+::slotted(span a) // Not this though, this wouldn't work
+
+```
+
+Note: Light DOM styling will override the styles applied within the component. This could be used to allow for clients overriding with their own styles.
+
+### Styling host components
+
+- Apply to component in source HTML file like `my-component { background: red; }`
+- Apply within the component itself using `:host { ... }`
+- Host can apply to components with certain classes applied:
+
+```
+<my-component class="foo"></my-component>
+
+In component:
+:host(.foo) {
+  ...
+}
+```
+- Use `:host-content(selector)` to target containing elements around the custom element from within the custom element, such as:
+
+```
+:host-context(p) {
+  font-weight: bold;
+}
+```
+
+### Using CSS variables
+
+Any CSS variables set outside the component can be used inside the component, such as 
+
+```
+html {
+  --color-primary: #f00;
+}
+
+In component:
+:host {
+  color: var(--color-primary);
+}
+
+```
+
+## Detecting attribute changes
+
+Use life cycle method `attributeChangedCallback(name, oldValue, newValue)` to respond to changes in *observed* attributes on the custom element.
+
+Specify which attributes need to be watched by adding a property using:
+
+```
+static get observedAttributes() {
+  return ['text', 'class', 'foo']; // names of attributes you need to watch
+}
+```
+
+You can then listen for changes in the `attributeChangedCallback` life cycle method.
+
+## Using disconnectedCallback
+
+Useful for cleaning up listeners when removing a component from the DOM.
+
+## Using a render method
+
+- Set up a custom render method with something like `_render()` for updating the DOM.
+- This can make it easier to reason with a complex component that sets and updates DOM in multiple places. So instead, you set some properties, such as "isVisible" then call render and let it decide how to render the result based on the data.
+- Not essential but can be good practice
+
+## Should you hand code Web Components?
+
+Maybe - you certainly can. But you may prefer to use a tool such as Stencil or Svelte. Link to a blog post on how to create Web Components with each of these.
+
+## Advanced features 
+
+(Could be a separate post)
+
+### Public methods and properties
+
+- Access custom element in the light dom using document.querySelector
+- Add public methods by omiting the underscore
+- Useful when abstracting complexity from the element and providing a public API for using it
+- e.g. modal.open()
+- Also applies to properties such as `this.open` in a custom element
+
+### Dispatching events
+
+You can listen for events from the light DOM outside the custom element like:
+
+```
+modal.addEventListener('confirm', () => {
+  console.log('Confirm event received')
+});
+```
+
+Then dispatch an event from a specific HTML element within the custom element like:
+
+```
+_cancel(event) {
+  console.log('Cancel pressed');
+  this.close();
+  const cancelEvent = new Event('cancel', { bubbles: true, composed: true });
+  event.target.dispatchEvent(cancelEvent);
+}
+```
+
+Without bubbles and composed, this doesn't go outside the component. You need to set both to true so it bubbles up, but also can then leave the shadow DOM tree.
+
+A simpler way is to dispatch the event from the custom element itself, like:
+
+```
+const confirmEvent = new Event('confirm');
+this.dispatchEvent(confirmEvent);
+```
+
+This does not need the configuration settings for `bubbles` and `composed` because it's triggered on the element itself (`my-modal`) so any listeners on it will receive it. It won't bubble further.
+
+
+# Stencil.js
+
+- Supports native JS as well as TypeScript
+- Adds polyfills automatically
+- Adds enhancements like lazy loading
+- And re-rendering optimisations
+
+- Uses JSX in rendering
+- Live updating properties
+
+Run `npm start` to create a dev version that runs on `localhost:3333`.
+
+## Basic Stencil component
+
+In `/src/components/side-drawer/side-drawer.tsx`:
+
+```
+import { Component, h } from '@stencil/core';
+
+@Component({
+  tag: 'my-side-drawer'
+});
+export class SideDrawer {
+  render() { // required
+    return <div>ok</div>;
+  }
+}
+```
+
+Then in `index.html` you can use it like `<my-side-drawer></my-side-drawer>`
+
+## Styling
+
+You can reference stylesheets (Sass or CSS supported) by putting it in the `@Component` decorator:
+
+```
+@Component({
+  ...
+  styleUrl: './my-component.css' // Stylesheet (single)
+})
+
+or 
+
+@Component({
+  ...
+  styles: 'h1 {...}' // Inline styling
+})
+
+or
+
+@Component({
+  ...
+  styleUrls: ['...'] // Multiple stylesheets
+})
+```
+
+## Slots
+
+Use `<slot></slot>` as normal in the JSX output.
+
+## Props
+
+First, ensure to import `Prop` from `@stencil/core`, then you can define props in the component like:
+
+```
+@Prop() propertyName: string; // Declaring a string prop called 'propertyName'
+```
+
+By default the `@Prop` decorator doesn't need configuration options. It will create a property that will automatically update and re-render (efficiently) when it changes.
+
+- Reflect changes from properties to attributes: Properties are in the JS for a component and can be dynamically changed but the attributes in the custom element declaration in the DOM won't automatically update unless you define a property using:
+
+`@Prop({ reflect: true })`
+
+- Test this by using console to select component and set `foo.title` dynamically
+
+

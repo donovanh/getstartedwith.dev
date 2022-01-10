@@ -1,14 +1,15 @@
 ---
 layout: layouts/_base.njk
 ---
+
 {% from "macros/tags-list.njk" import tagsList %}
-{% from "macros/buy-button.njk" import buyButton %}
+{% from "macros/button.njk" import Button %}
 
 <article class="post">
     <header class="post-header">
         <h1>{{ title }}</h1>
         <p class="lead">{{ lead }}</p>
-        <p>If you wish, you can <a href="https://cssanimation.gumroad.com/l/mRBTH">buy this guide as an eBook</a>, or continue reading.</p>
+        {{ Button('large', slug, book) }}
         <details>
             <summary>Table of contents</summary>
             {{ content | toc | safe }}
@@ -23,7 +24,7 @@ layout: layouts/_base.njk
 
     <p>This site is advert-free, and I publish all the content of each guide for free online. If you'd like to support this site, please consider buying an eBook version of this post. It is available in ePub, PDF and mobi formats.</p>
 
-    {{ buyButton('large', 'https://cssanimation.gumroad.com/l/mRBTH', slug) }}
+    {{ Button('large', slug, book) }}
 
 </article>
 
@@ -31,6 +32,6 @@ layout: layouts/_base.njk
     <p><a href="#top">Back to top</a></p>
 </div>
 
-<div class="buy-this-guide" id="buy-this-guide">
-    {{ buyButton('small', 'https://cssanimation.gumroad.com/l/mRBTH', slug) }}
+<div class="download-this-guide" id="download-this-guide">
+    {{ Button('small', slug, book) }}
 </div>

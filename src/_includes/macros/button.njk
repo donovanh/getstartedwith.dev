@@ -1,8 +1,8 @@
 
-{%- macro buyButton(size, url, slug) -%}
-<p class="{{ size }} buy-button">
+{%- macro Button(size, slug, bookURL) -%}
+<p class="{{ size }} download-button">
   <span class="image" style="background-image: url(/assets/img/books/{{ slug }}-thumb.png)"></span>
-  <a href="{{ url }}">Buy this guide</a>
+  <a href="/books/{{ bookURL }}">Download this guide</a>
   <span class="formats">epub &middot; pdf &middot; mobi</span>
 </p>
 {% endmacro %}
