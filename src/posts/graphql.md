@@ -16,7 +16,7 @@ book: 'graphql/GraphQL.zip'
 
 GraphQL is a query language that is designed to be a better way of requesting data from APIs.
 
-In recent years, most web-based APIs worked in a style called [REST](https://en.wikipedia.org/wiki/Representational_state_transfer). With this approach we would interact with servers to request and send data using different URLs that defined the kind of response we wanted. 
+Most web-based APIs around the web work in a style called [REST](https://en.wikipedia.org/wiki/Representational_state_transfer). With this approach we would interact with servers to request and send data using different URLs that defined the kind of response we wanted. 
 
 With REST we would make GET requests for data, PUT or POST requests to send data to the server to make changes. We'd use different URLs for different sets of data.
 
