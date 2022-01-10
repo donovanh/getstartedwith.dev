@@ -18,7 +18,7 @@
     <id>https://getstartedwith.dev/graphql/</id>
     <content type="html">&lt;h2 id=&quot;what-is-graphql&quot; tabindex=&quot;-1&quot;&gt;What is GraphQL&lt;/h2&gt;
 &lt;p&gt;GraphQL is a query language that is designed to be a better way of requesting data from APIs.&lt;/p&gt;
-&lt;p&gt;In recent years, most web-based APIs worked in a style called &lt;a href=&quot;https://en.wikipedia.org/wiki/Representational_state_transfer&quot;&gt;REST&lt;/a&gt;. With this approach we would interact with servers to request and send data using different URLs that defined the kind of response we wanted.&lt;/p&gt;
+&lt;p&gt;Most web-based APIs around the web work in a style called &lt;a href=&quot;https://en.wikipedia.org/wiki/Representational_state_transfer&quot;&gt;REST&lt;/a&gt;. With this approach we would interact with servers to request and send data using different URLs that defined the kind of response we wanted.&lt;/p&gt;
 &lt;p&gt;With REST we would make GET requests for data, PUT or POST requests to send data to the server to make changes. We&#39;d use different URLs for different sets of data.&lt;/p&gt;
 &lt;p&gt;GraphQL is different. It still allows us to make requests to our API server, but it allows us to more carefully describe the shape of the data we want back. In doing so, we can ask for just the data we need, and reduce the number of requests needed to request complex data sets.&lt;/p&gt;
 &lt;h3 id=&quot;graphql-vs-rest&quot; tabindex=&quot;-1&quot;&gt;GraphQL vs REST&lt;/h3&gt;
