@@ -1,12 +1,27 @@
 TODO:
 
+- Prettier
+- Epub build errors
+- Nicer covers
+- Maybe a gradient effect on borders?
+
+- Update homepage view to represent articles like little books
+- Update description to emphasise the book nature
+- Put books up for a reasonable price
+- Emphasise the buyable book versions on the free page
+- Sharing options 
+- Add cache busting to assets
+- Add uglify to assets
+- Replace Moment with DateFns (or native?)
+
+
+
 - Mention this on GraphQL next steps https://www.apollographql.com/docs/apollo-server/security/authentication/
 - And this https://the-guild.dev/blog/introducing-envelop
--- Improve Buy This Guide buttons / links to open modal iframe
--- Put buy option on home page alonside read online
---- Buy eBook / Read online
 
--- Certificate
+
+
+-- Completion Certificates
 
 -- App manifest
 -- Lazy load images
@@ -40,8 +55,6 @@ Posts structure:
 - Main topic (e.g. React, Svelte, Testing, Automation)
 -- Subtopic (e.g. React > Redux, Testing -> Cypress)
 - Collection
-
-Replace Moment with DateFns (or native?)
 
 (Put together a CSS topic collection)
 

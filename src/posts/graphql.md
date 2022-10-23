@@ -4,6 +4,8 @@ description: Learn how to build a simple GraphQL API.
 date: 2021-07-14
 updated: 2021-07-14
 slug: graphql
+cover_thumb: "graphql-thumb.png"
+cover_medium: "graphql-medium.png"
 tags:
     - GraphQL
 permalink: "{{ slug }}/"

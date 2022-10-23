@@ -2,6 +2,10 @@
 
 A blog about web development.
 
+## Generating content
+
+TODO: instructions
+
 ## Credits
 
 Created and written by Donovan Hutchinson. If you'd like to quote any content, please link back to the original source.
