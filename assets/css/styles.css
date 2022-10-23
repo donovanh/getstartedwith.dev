@@ -355,6 +355,24 @@ footer {
     width: 100%;
 }
 
+.post-list-item-cover img {
+    border-radius: 5px;
+    border: 3px solid var(--highlight-colour-light);
+    box-shadow: 8px 6px 0 0 var(--highlight-colour-light);
+    rotate: z -5deg;
+    transition: all 0.5s cubic-bezier(0, 0.75, 0, 1);
+    max-width: 200px;
+}
+
+.post-list-item-cover:hover img {
+    box-shadow: 2px 2px 0 0 var(--highlight-colour-light);
+    rotate: none;
+}
+
+.post-list-item-text {
+    display: none;
+}
+
 @media screen and (min-width: 800px) {
     .post-list-item {
         width: 50%;
