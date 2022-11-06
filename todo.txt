@@ -1,7 +1,6 @@
 TODO:
 
-- Prettier
-- Epub build errors
+- Set up set of string colours
 - Nicer covers
 - Maybe a gradient effect on borders?
 
