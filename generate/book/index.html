@@ -11,8 +11,8 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/logos/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/logos/favicon-16x16.png">
 
-<link rel="stylesheet" type="text/css" href="/assets/css/code-highlight.css ?v=1666524047672">
-<link rel="stylesheet" type="text/css" href="/assets/css/styles.css?v=1666524047672">
+<link rel="stylesheet" type="text/css" href="/assets/css/code-highlight.css?v=1625398113000">
+<link rel="stylesheet" type="text/css" href="/assets/css/styles.css?v=1666532776187">
 
 <!-- Social meta tags -->
 <meta property="og:title" content="Book Cover Image layout - GetStartedWith.dev">
@@ -28,24 +28,36 @@
       }
       body {
         max-width: 100%;
+        position: relative;
+      }
+      body::before {
+        content: '';
+        position: absolute;
+        left:0;
+        top: 0;
+        bottom: 0;
+        width: 10vw;
+        background-color: #123;
       }
       .page-header, .page-header h3 {
         margin-top: 0;
       }
       .wrapper {
         display: flex;
-        justify-content: center;
         align-items: center;
-        height: 90vh;
+        height: 100vh;
+        width: 100vw;
+        padding-left: 10vw;
       }
       main {
         padding-bottom: 6rem;
       }
       .meta {
-        text-align: right;
+        text-align: left;
         position: absolute;
-        bottom: 1.5rem;
-        right: 1.5rem;
+        bottom: 20vw;
+        left: 15vw;
+        font-size: 0.75rem;
       }
       #description {
         width: 75%;
